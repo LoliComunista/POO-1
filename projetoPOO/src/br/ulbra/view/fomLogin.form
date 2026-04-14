@@ -40,7 +40,7 @@
               <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel3" alignment="0" min="-2" pref="48" max="-2" attributes="0"/>
-                  <Component id="jPasswordField1" alignment="0" min="-2" pref="204" max="-2" attributes="0"/>
+                  <Component id="txtSenha" alignment="0" min="-2" pref="204" max="-2" attributes="0"/>
                   <Component id="txtEmail" alignment="0" min="-2" pref="185" max="-2" attributes="0"/>
                   <Component id="jLabel2" alignment="0" min="-2" pref="58" max="-2" attributes="0"/>
               </Group>
@@ -60,7 +60,7 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jPasswordField1" min="-2" pref="31" max="-2" attributes="0"/>
+              <Component id="txtSenha" min="-2" pref="31" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
               <Component id="btnEntrar" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="21" max="32767" attributes="0"/>
@@ -109,7 +109,7 @@
         <Property name="text" type="java.lang.String" value="Senha"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JPasswordField" name="jPasswordField1">
+    <Component class="javax.swing.JPasswordField" name="txtSenha">
       <Properties>
         <Property name="text" type="java.lang.String" value="jPasswordField1"/>
       </Properties>

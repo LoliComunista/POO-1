@@ -5,6 +5,8 @@
  */
 package br.ulbra.view;
 
+import javax.swing.text.html.FormView;
+
 /**
  *
  * @author aluno.saolucas
@@ -120,7 +122,7 @@ public class formDashBoard extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
+        new formUsuario().setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**

@@ -5,6 +5,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class UsuarioDao {
@@ -63,4 +67,34 @@ public class UsuarioDao {
             ConnectionFactory.closeConnection(con, stmt);
         }
     }
+    
+   public ArrayList<Usuario> read() {
+
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+
+        List<Usuario> usuarios = new ArrayList<>();
+
+        try {
+            stmt = con.prepareStatement("SELECT * FROM tbUsuario");
+            rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                Usuario usuario = new Usuario();
+                usuario.setId(rs.getInt("id"));
+                usuario.setNome(rs.getString("nome"));
+                usuario.setEmail(rs.getString("email"));
+                usuario.setSenha(rs.getString("senha"));
+                usuario.setSexo(rs.getString("sexo"));
+                usuarios.add(usuario);
+            }
+        } catch (SQLException ex) {
+           Logger.getLogger(UsuarioDao.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            ConnectionFactory.closeConnection(con, stmt, rs);
+        }
+        return (ArrayList<Usuario>) usuarios;
+    }
+
 }
+
