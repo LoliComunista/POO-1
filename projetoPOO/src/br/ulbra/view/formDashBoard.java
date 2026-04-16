@@ -84,6 +84,11 @@ public class formDashBoard extends javax.swing.JFrame {
 
         jMenuItem2.setBackground(new java.awt.Color(153, 153, 255));
         jMenuItem2.setText("Sair");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem2);
 
         jMenuBar1.add(jMenu1);
@@ -146,6 +151,10 @@ public class formDashBoard extends javax.swing.JFrame {
             Logger.getLogger(formDashBoard.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jListagemActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments
