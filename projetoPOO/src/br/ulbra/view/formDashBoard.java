@@ -39,7 +39,6 @@ public class formDashBoard extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
         jListagem = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
@@ -95,10 +94,6 @@ public class formDashBoard extends javax.swing.JFrame {
 
         jMenu2.setBackground(new java.awt.Color(102, 102, 255));
         jMenu2.setText("Consultas");
-
-        jMenuItem3.setBackground(new java.awt.Color(153, 153, 255));
-        jMenuItem3.setText("Usuário");
-        jMenu2.add(jMenuItem3);
 
         jListagem.setBackground(new java.awt.Color(153, 153, 255));
         jListagem.setText("Listagem");
@@ -200,7 +195,6 @@ public class formDashBoard extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
