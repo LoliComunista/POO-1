@@ -22,6 +22,7 @@ public class fomLogin extends javax.swing.JFrame {
      */
     public fomLogin() {
         initComponents();
+         this.setLocationRelativeTo(null);
     }
 
     /**
