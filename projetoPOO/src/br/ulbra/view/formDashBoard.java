@@ -5,7 +5,9 @@
  */
 package br.ulbra.view;
 
-import javax.swing.text.html.FormView;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -38,6 +40,7 @@ public class formDashBoard extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
+        jListagem = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
 
@@ -92,6 +95,15 @@ public class formDashBoard extends javax.swing.JFrame {
         jMenuItem3.setText("Usuário");
         jMenu2.add(jMenuItem3);
 
+        jListagem.setBackground(new java.awt.Color(153, 153, 255));
+        jListagem.setText("Listagem");
+        jListagem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jListagemActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jListagem);
+
         jMenuBar1.add(jMenu2);
 
         jMenu3.setBackground(new java.awt.Color(102, 102, 255));
@@ -123,7 +135,17 @@ public class formDashBoard extends javax.swing.JFrame {
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         new formUsuario().setVisible(true);
+
+
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jListagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jListagemActionPerformed
+        try {
+            new formListagem().setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(formDashBoard.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jListagemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -162,6 +184,7 @@ public class formDashBoard extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenuItem jListagem;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;

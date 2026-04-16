@@ -6,9 +6,9 @@
 package br.ulbra.view;
 
 import br.ulbra.dao.UsuarioDao;
-import com.sun.istack.internal.logging.Logger;
+
 import java.sql.SQLException;
-import java.util.logging.Level;
+
 import javax.swing.JOptionPane;
 
 /**
@@ -116,16 +116,16 @@ public class fomLogin extends javax.swing.JFrame {
 
         try {
             dao = new UsuarioDao();
-            if(dao.checkLogin(txtEmail.getText(), txtSenha.getText())){
-            new formDashBoard().setVisible(true);
-            this.dispose();
-            } else{
-            JOptionPane.showMessageDialog(null, "login ou  senha incorretos!");
+            if (dao.checkLogin(txtEmail.getText(), txtSenha.getText())) {
+                new formDashBoard().setVisible(true);
+                this.dispose();
+            } else {
+                JOptionPane.showMessageDialog(null, "login ou  senha incorretos!");
             }
-        }catch(SQLException ex){
-        JOptionPane.showMessageDialog(null, "erro: "+ex.getMessage());
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "erro: " + ex.getMessage());
         }
-        
+
     }//GEN-LAST:event_btnEntrarActionPerformed
 
     private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed

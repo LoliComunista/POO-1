@@ -5,7 +5,12 @@
  */
 package br.ulbra.view;
 
+import br.ulbra.Model.Usuario;
+import br.ulbra.dao.UsuarioDao;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -23,6 +28,22 @@ public class formListagem extends javax.swing.JFrame {
 
     }
 
+    public void readJTable() throws SQLException {
+        DefaultTableModel modelo = (DefaultTableModel) tbUsuario.getModel();
+        modelo.setNumRows(0);
+        UsuarioDao udao = new UsuarioDao();
+
+        for (Usuario p : udao.read()) {
+            modelo.addRow(new Object[]{
+                //  p.getIdUsu(),
+                p.getNome(),
+                p.getEmail(),
+                p.getSenha(),
+                p.getSexo()
+            });
+        }
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -35,18 +56,20 @@ public class formListagem extends javax.swing.JFrame {
         jPopupMenu1 = new javax.swing.JPopupMenu();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        JTable = new javax.swing.JTable();
+        tbUsuario = new javax.swing.JTable();
         btnFechar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(153, 153, 153));
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("RELATÓRIO GERAL");
 
-        JTable.setForeground(new java.awt.Color(255, 255, 255));
-        JTable.setModel(new javax.swing.table.DefaultTableModel(
+        tbUsuario.setBackground(new java.awt.Color(153, 153, 153));
+        tbUsuario.setForeground(new java.awt.Color(0, 0, 0));
+        tbUsuario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -54,9 +77,9 @@ public class formListagem extends javax.swing.JFrame {
                 "Nome", "Email", "Senha", "Sexo"
             }
         ));
-        jScrollPane1.setViewportView(JTable);
+        jScrollPane1.setViewportView(tbUsuario);
 
-        btnFechar.setForeground(new java.awt.Color(255, 255, 255));
+        btnFechar.setForeground(new java.awt.Color(0, 0, 0));
         btnFechar.setText("Fechar");
         btnFechar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -130,17 +153,21 @@ public class formListagem extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {. .¢
-                new formListagem().setVisible(true);
+            public void run() {
+                try {
+                    new formListagem().setVisible(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(formListagem.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable JTable;
     private javax.swing.JButton btnFechar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tbUsuario;
     // End of variables declaration//GEN-END:variables
 }
